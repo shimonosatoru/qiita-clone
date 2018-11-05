@@ -1,24 +1,9 @@
-# README
+# Qiita Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railsの[Qiita](https://qiita.com/)クローンを製作
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 開発環境
+- ruby 2.5.1
+- Rails 5.2.1
+- MySQL5.7
+- slim
