@@ -1,0 +1,8 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
+  Exclude:
+    - './db/schema.rb'
+
+Metrics/LineLength:
+  Max: 150
