@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'slim-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: :mri
