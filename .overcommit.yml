@@ -14,13 +14,18 @@
 # https://github.com/brigade/overcommit#configuration
 #
 # Uncomment the following lines to make the configuration take effect.
- PreCommit:
-  RuboCop:
+PreCommit:
+RuboCop:
+  enabled: true
+  command: ['bundle', 'exec', 'rubocop']
+  on_warn: fail # Treat all warnings as failures
+TrailingWhitespace:
+  enabled: true
+  exclude:
+    - 'spec/fixtures/**/*'
+    - 'docs/**/*'
+SlimLint:
     enabled: true
-    command: ['bundle', 'exec', 'rubocop']
+    command: ['bundle', 'exec', 'slim-lint', 'app/views']
     on_warn: fail # Treat all warnings as failures
-  TrailingWhitespace:
-    enabled: true
-    exclude:
-      - 'spec/fixtures/**/*'
-      - 'docs/**/*'
+    quiet: true # Hide ruby version check warnings at whitequark/parser
