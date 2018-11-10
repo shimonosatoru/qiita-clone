@@ -1,0 +1,13 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
+  Exclude:
+    - db/**/*
+    - bin/*
+    - config/**/*
+    - vendor/**/*
+    - lib/tasks/dev.rake
+Metrics/LineLength:
+  Max: 150
+Style/Documentation:
+  Enabled: false
