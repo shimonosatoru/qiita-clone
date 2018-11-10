@@ -76,7 +76,6 @@ GEM
     iniparse (1.4.4)
     interception (0.5)
     jaro_winkler (1.5.1)
-    jaro_winkler (1.5.1-x86_64-darwin-17)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
