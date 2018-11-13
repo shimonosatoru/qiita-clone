@@ -8,4 +8,8 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    => link_to('ログイン', new_user_session_path)
+    = link_to('ログアウト', destroy_user_session_path)
+    - flash.each do |type, msg|
+      p = msg
     = yield

@@ -14,6 +14,14 @@ h2
     = f.input :password_confirmation,
     -                 required: true,
     -                 input_html: { autocomplete: "new-password" }
+    = f.input :flag_public_email
+    = f.input :username
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :website_url
+    = f.input :organization
+    = f.input :location
+    = f.input :description
   .form-actions
     = f.button :submit, "Sign up"
 = render "users/shared/links"

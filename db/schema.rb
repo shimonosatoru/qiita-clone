@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_10_071542) do
+ActiveRecord::Schema.define(version: 2018_11_12_175110) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
+    t.boolean "flag_public_email"
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "website_url"
+    t.string "organization"
+    t.string "location"
+    t.text "description"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
