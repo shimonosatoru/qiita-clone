@@ -3,6 +3,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: %i[new edit create update destroy]
+  before_action :reqiure_permission_to_edit, only: %i[edit update destroy]
 
   def index
     @articles = Article.all
@@ -40,11 +41,16 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    def article_params
-      params.require(:article).permit(:title, :body, :public)
-    end
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :public)
+  end
+
+  def reqiure_permission_to_edit
+    redirect_to articles_url, notice: 'Permission denied.' unless @article.user == current_user
+  end
 end
