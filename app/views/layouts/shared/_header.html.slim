@@ -1,0 +1,11 @@
+=> link_to('ホーム', root_path)
+=> link_to('ユーザ一覧', users_path)
+=> link_to('記事一覧', articles_path)
+=> link_to('FAQ', faq_path)
+=> link_to('Terms', terms_path)
+- if user_signed_in?
+  => "#{current_user.username}としてログイン中"
+  => link_to('マイページ', "users/#{current_user.id}")
+  => link_to('ログアウト', destroy_user_session_path)
+- else
+  => link_to('ログイン', new_user_session_path)

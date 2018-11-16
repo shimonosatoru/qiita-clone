@@ -1,10 +1,32 @@
 p#notice = notice
 
 p
-  strong Username:
+  strong ID
+  = @user.id
+p
+  strong Email
+  = @user.email
+p
+  strong Username
   = @user.username
 p
-  strong Description:
+  strong First_name
+  = @user.first_name
+p
+  strong Last_name
+  = @user.last_name
+p
+  strong Website Url
+  = @user.website_url
+p
+  strong Organization
+  = @user.organization
+p
+  strong Location
+  = @user.location
+p
+  strong Description
   = @user.description
-
+- if current_user.id == @user.id
+  =< link_to 'Edit', 'users/edit'
 =< link_to 'Back', users_path

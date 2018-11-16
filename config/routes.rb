@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
  Rails.application.routes.draw do
-  resources :articles
-  root 'users#index'
+  root 'pages#home'
 
    devise_for :users, controllers: {
     registrations: 'users/registrations',
     passwords: 'users/passwords',
     sessions: 'users/sessions'
   }
-  
-   resources :users, only: %i[index show]
+  resources :articles
+
+  get 'faq', to: 'pages#faq', as: :faq
+  get 'terms', to: 'pages#terms', as: :terms
+
+  resources :users, only: %i[index show]
 end
