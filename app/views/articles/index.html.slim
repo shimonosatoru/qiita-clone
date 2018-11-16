@@ -3,13 +3,22 @@ h1 Listing articles
 table
   thead
     tr
+      th ID
+      th User ID
+      th Title
+      th Body
+      th Public
       th
       th
       th
-
   tbody
     - @articles.each do |article|
       tr
+        td = article.id
+        td = article.user_id
+        td = article.title
+        td = article.body
+        td = article.public
         td = link_to 'Show', article
         td = link_to 'Edit', edit_article_path(article)
         td = link_to 'Destroy', article, data: { confirm: 'Are you sure?' }, method: :delete

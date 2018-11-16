@@ -3,15 +3,27 @@ h1 Listing users
 table
   thead
     tr
+      th ID
+      th Email
       th Username
+      th First_name
+      th Last_name
+      th Website Url
+      th Organization
+      th Location
       th Description
       th
-      th
-      th
-
   tbody
     - @users.each do |user|
       tr
+        td = user.id
+        td = user.email
         td = user.username
+        td = user.first_name
+        td = user.last_name
+        td = user.website_url
+        td = user.organization
+        td = user.location
         td = user.description
         td = link_to 'Show', user
+        td = link_to 'Edit', 'users/edit'
