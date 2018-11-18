@@ -1,12 +1,17 @@
-h2
-  | Sign up
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :username, required: true, autofocus: true , input_html: { autocomplete: "username" }
-    = f.input :email, required: true, autofocus: true , input_html: { autocomplete: "email" }
-    = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" }
-    = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }
-  .form-actions
-    = f.button :submit, "Sign up"
-= render "users/shared/links"
+.card.col-md-4.mx-auto
+  .card-body
+    h5.card-title ユーザ登録
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :username, required: true, autofocus: true , input_html: { autocomplete: "username", class: "form-control" }
+      .form-group
+        = f.input :email, required: true, autofocus: true , input_html: { autocomplete: "email", class: "form-control" }
+      .form-group
+        = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password", class: "form-control" }
+      .form-group
+        = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: "form-control" }
+      .form-actions
+        = f.button :submit, "登録", class: "btn btn-primary"
+    hr
+    = render "users/shared/links"

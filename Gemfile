@@ -15,6 +15,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'slim-rails'
 gem 'devise'
 gem 'simple_form'
+gem 'jquery-rails'
+gem 'bootstrap'
+gem 'font-awesome-rails'
 gem 'redcarpet'
 gem 'rouge'
 
