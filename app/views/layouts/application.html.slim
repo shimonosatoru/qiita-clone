@@ -11,4 +11,6 @@ html
     = render 'layouts/shared/header'
     - flash.each do |type, msg|
       p = msg
-    = yield
+    .container
+      .row.pt-4
+        = yield
