@@ -15,6 +15,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'slim-rails'
 gem 'devise'
 gem 'simple_form'
+gem 'redcarpet'
+gem 'rouge'
 
 group :development, :test do
   gem 'byebug', platforms: :mri
