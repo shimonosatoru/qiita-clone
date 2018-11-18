@@ -12,10 +12,13 @@ class ArticlesController < ApplicationController
   def show; end
 
   def new
+    render :new, layout: "markdown"
     @article = Article.new
   end
 
-  def edit; end
+  def edit
+    render :edit, layout: "markdown"
+  end
 
   def create
     @article = current_user.articles.new(article_params)
