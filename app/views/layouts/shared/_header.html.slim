@@ -1,99 +1,89 @@
-=> link_to('ホーム', root_path)
-=> link_to('ユーザ一覧', users_path)
-=> link_to('記事一覧', articles_path)
-=> link_to('FAQ', faq_path)
-=> link_to('Terms', terms_path)
-- if user_signed_in?
-  => "#{current_user.username}としてログイン中"
-  => link_to('マイページ', "users/#{current_user.id}")
-  => link_to('ログアウト', destroy_user_session_path)
-- else
-  => link_to('ログイン', new_user_session_path)
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
-  .container
-    a.navbar-brand href="#"
-      | Qiita
-    button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"
-      span.navbar-toggler-icon
-    #navbar.collapse.navbar-collapse
-      ul.navbar-nav.mr-auto
-        li.nav-item.dropdown
-          a#dropdown07.nav-link.dropdown-toggle href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            | ホーム
-          .dropdown-menu aria-labelledby="dropdown07"
-            a.dropdown-item href="#"
-              i.fa.fa-line-chart
-              | トレンド
-            a.dropdown-item href="#"
-              i.fa.fa-list
-              | タイムライン
-            a.dropdown-item href="#"
-              i.fa.fa-tags
-              | タグフィード
-            a.dropdown-item href="#"
-              i.fa.fa-flag-checkered
-              | マイルストーン
-        li.nav-item.dropdown
-          a#dropdown07.nav-link.dropdown-toggle href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            | コミュニティ
-          .dropdown-menu aria-labelledby="dropdown07"
-            a.dropdown-item href="#"
-              i.fa.fa-users
-              | ユーザ一覧
-            a.dropdown-item href="#"
-              i.fa.fa-building-o
-              | Organization一覧
-            a.dropdown-item href="#"
-              i.fa.fa-calendar
-              | アドベントカレンダー
-            .dropdown-divider
-            a.dropdown-item href="#"
-              i.fa.fa-comments-o
-              | Qiitadon(β)
-            a.dropdown-item href="#"
-              i.fa.fa-newspaper-o
-              | Qiita:Zine
-            .dropdown-divider
-            a.dropdown-item href="#"
-              i.fa.fa-book
-              | コミュニティガイドライン
-            a.dropdown-item href="#"
-              i.fa.fa-book
-              | 良い記事を書くために
-        li.nav-item
-          form.form-inline.my-2.my-md-0
-            input.form-control type="text" placeholder="キーワードを入力"
-            i.fa.fa-search
-      ul.navbar-nav
-        - if user_signed_in?
-          li.nav-item
-            = link_to new_user_registration_path, class: 'nav-link' do
-              i.fa.fa-folder-open
-              | ストック一覧
-          li.nav-item
-            = link_to new_user_registration_path, class: 'nav-link btn btn-outline-secondary' do
-              i.fa.fa-pencil-square-o
-              | 投稿する
+header#header
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    .container
+      a.navbar-brand href="#"
+        | Qiita
+      button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+      #navbar.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
           li.nav-item.dropdown
             a#dropdown07.nav-link.dropdown-toggle href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-              | #{current_user.username}
+              | ホーム
             .dropdown-menu aria-labelledby="dropdown07"
               a.dropdown-item href="#"
-                | マイページ
+                i.fa.fa-line-chart
+                | トレンド
+              a.dropdown-item href="#"
+                i.fa.fa-list
+                | タイムライン
+              a.dropdown-item href="#"
+                i.fa.fa-tags
+                | タグフィード
+              a.dropdown-item href="#"
+                i.fa.fa-flag-checkered
+                | マイルストーン
+          li.nav-item.dropdown
+            a#dropdown07.nav-link.dropdown-toggle href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              | コミュニティ
+            .dropdown-menu aria-labelledby="dropdown07"
+              a.dropdown-item href="#"
+                i.fa.fa-users
+                | ユーザ一覧
+              a.dropdown-item href="#"
+                i.fa.fa-building-o
+                | Organization一覧
+              a.dropdown-item href="#"
+                i.fa.fa-calendar
+                | アドベントカレンダー
               .dropdown-divider
               a.dropdown-item href="#"
-                | 下書き一覧
+                i.fa.fa-comments-o
+                | Qiitadon(β)
               a.dropdown-item href="#"
-                | 編集リクエスト一覧
+                i.fa.fa-newspaper-o
+                | Qiita:Zine
               .dropdown-divider
               a.dropdown-item href="#"
-                | 設定
+                i.fa.fa-book
+                | コミュニティガイドライン
               a.dropdown-item href="#"
-                | ヘルプ
-              .dropdown-divider
-              => link_to('ログアウト', destroy_user_session_path, class: 'dropdown-item')
-        - else
+                i.fa.fa-book
+                | 良い記事を書くために
           li.nav-item
-            => link_to('ユーザ登録', new_user_registration_path, class: 'nav-link btn btn-outline-secondary')
-          li.nav-item
-            => link_to('ログイン', new_user_session_path, class: 'nav-link')
+            form.form-inline.my-2.my-md-0
+              input.form-control type="text" placeholder="キーワードを入力"
+              i.fa.fa-search
+        ul.navbar-nav
+          - if user_signed_in?
+            li.nav-item
+              = link_to new_user_registration_path, class: 'nav-link' do
+                i.fa.fa-folder-open
+                | ストック一覧
+            li.nav-item
+              = link_to new_user_registration_path, class: 'nav-link btn btn-outline-secondary' do
+                i.fa.fa-pencil-square-o
+                | 投稿する
+            li.nav-item.dropdown
+              a#dropdown07.nav-link.dropdown-toggle href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                | #{current_user.username}
+              .dropdown-menu aria-labelledby="dropdown07"
+                a.dropdown-item href="#"
+                  | マイページ
+                .dropdown-divider
+                a.dropdown-item href="#"
+                  | 下書き一覧
+                a.dropdown-item href="#"
+                  | 編集リクエスト一覧
+                .dropdown-divider
+                a.dropdown-item href="#"
+                  | 設定
+                a.dropdown-item href="#"
+                  | ヘルプ
+                .dropdown-divider
+                => link_to('ログアウト', destroy_user_session_path, class: 'dropdown-item')
+          - else
+            li.nav-item
+              => link_to('ユーザ登録', new_user_registration_path, class: 'nav-link btn btn-outline-secondary')
+            li.nav-item
+              => link_to('ログイン', new_user_session_path, class: 'nav-link')
