@@ -18,6 +18,8 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'font-awesome-rails'
+gem 'redcarpet'
+gem 'rouge'
 
 group :development, :test do
   gem 'byebug', platforms: :mri
