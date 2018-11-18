@@ -9,9 +9,10 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     = render 'layouts/shared/header'
-    - flash.each do |type, msg|
-      p = msg
     .container
+      - flash.each do |type, msg|
+        p.alert.mt-4 class=bootstrap_class_for(type)
+          = msg
       .row.pt-4
         = yield
     = render 'layouts/shared/footer'
