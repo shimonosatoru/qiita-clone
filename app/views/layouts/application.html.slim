@@ -6,6 +6,8 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.js'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     = render 'layouts/shared/header'
