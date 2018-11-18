@@ -1,1 +1,32 @@
+/*
+*= require font-awesome
+*/
 @import "bootstrap";
+
+html {
+  font-size: 14px;
+}
+
+/* Header */
+#navbar {
+  .nav-item {
+    .nav-link {
+      padding-right: 0.8rem;
+      padding-left: 0.8rem;
+    }
+    .form-inline {
+      position: relative;
+      i.fa {
+        position: absolute;
+        color: #6C757D;
+        left: 7px;
+      }
+      .form-control {
+        padding-left: 2rem;
+      }
+    }
+    i.fa {
+      margin-right: 4px;
+    }
+  }
+}
