@@ -12,8 +12,8 @@ class ArticlesController < ApplicationController
   def show; end
 
   def new
-    render :new, layout: "markdown"
     @article = Article.new
+    render :new, layout: "markdown"
   end
 
   def edit
