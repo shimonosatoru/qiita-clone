@@ -6,7 +6,7 @@
     a href="/users/#{@article.user.username}"
       = @article.user.username
   h1 = @article.title
-  .markdown
+  .article_body
     = markdown(@article.body)
 .aside.col-md-4
   - if @article.user_id == current_user.id

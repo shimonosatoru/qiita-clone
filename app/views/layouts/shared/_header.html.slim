@@ -1,7 +1,7 @@
 header#header
   nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
     .container
-      a.navbar-brand href="#"
+      a.navbar-brand href="/"
         | Qiita
       button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"
         span.navbar-toggler-icon
@@ -61,7 +61,7 @@ header#header
                 i.fa.fa-folder-open
                 | ストック一覧
             li.nav-item
-              = link_to new_user_registration_path, class: 'nav-link btn btn-outline-secondary' do
+              = link_to new_article_path, class: 'nav-link btn btn-outline-secondary' do
                 i.fa.fa-pencil-square-o
                 | 投稿する
             li.nav-item.dropdown
