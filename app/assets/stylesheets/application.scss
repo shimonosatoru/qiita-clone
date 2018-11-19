@@ -1,5 +1,6 @@
 /*
 *= require font-awesome
+*= require articles
 */
 @import "bootstrap";
 
@@ -34,5 +35,17 @@ html {
     i.fa {
       margin-right: 4px;
     }
+  }
+}
+
+
+/* Content */
+.list-group-item {
+  a {
+    color: #495057;
+  }
+  .article-title {
+    font-size: 16px;
+    font-weight: bold;
   }
 }

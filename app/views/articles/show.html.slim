@@ -1,10 +1,14 @@
-p#notice = notice
-
-h1 = @article.title
-p = @article.public
-=> link_to 'Edit', edit_article_path(@article)
-'|
-=< link_to 'Back', articles_path
-
-.markdown
-= markdown(@article.body)
+.col-12
+  =< link_to 'Back', articles_path
+.article.col-md-8
+  p.author
+    | Written by
+    a href="/users/#{@article.user.username}"
+      = @article.user.username
+  h1 = @article.title
+  .article_body
+    = markdown(@article.body)
+.aside.col-md-4
+  - if @article.user_id == current_user.id
+    => link_to 'Edit', edit_article_path(@article)
+  | サイド
