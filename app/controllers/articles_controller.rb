@@ -6,7 +6,8 @@ class ArticlesController < ApplicationController
   before_action :reqiure_permission_to_edit, only: %i[edit update destroy]
 
   def index
-    @articles = Article.all
+    @articles = searched_articles
+    @query = search_query
   end
 
   def show; end
@@ -55,5 +56,15 @@ class ArticlesController < ApplicationController
 
   def reqiure_permission_to_edit
     redirect_to articles_url, notice: 'Permission denied.' unless @article.user == current_user
+  end
+
+  def searched_articles
+    articles = Article.order('created_at desc, id desc').all
+    articles = articles.where('title like ?', "%#{search_query}%") if search_query
+    articles
+  end
+
+   def search_query
+    params[:query].presence
   end
 end

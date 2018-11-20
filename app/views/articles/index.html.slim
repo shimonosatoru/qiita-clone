@@ -1,13 +1,20 @@
 .list-group.col-md-8
   .list-group-item
-    h2 最新記事
-  - @articles.each do |article|
-    .list-group-item.list-group-item-action
-      p.article-title
-        a href="/articles/#{article.id}"
-          = article.title
-      p.article-info
-        | by
-        a.ml-1.mr-3 href="#{article.id}"
-          = article.user.username
-        = article.created_at.strftime('%m/%d')
+    - if @query
+      h2 #{@query}の検索結果
+    - else
+      h2 最新記事
+  - if @articles.present?
+    - @articles.each do |article|
+      .list-group-item.list-group-item-action
+        p.article-title
+          a href="/articles/#{article.id}"
+            = article.title
+        p.article-info
+          | by
+          a.ml-1.mr-3 href="#{article.id}"
+            = article.user.username
+          = article.created_at.strftime('%m/%d')
+  - else
+  .list-group-item.list-group-item-action
+    p.article-title 検索結果が見つかりませんでした。
