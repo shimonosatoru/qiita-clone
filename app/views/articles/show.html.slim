@@ -9,6 +9,6 @@
   .article_body
     = markdown(@article.body)
 .aside.col-md-4
-  - if @article.user_id == current_user.id
+  - if user_signed_in? && @article.user_id == current_user.id
     => link_to 'Edit', edit_article_path(@article)
   | サイド
