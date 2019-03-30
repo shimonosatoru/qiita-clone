@@ -16,6 +16,7 @@
       .article-submit
         = f.button :submit, class: 'btn btn-primary'
 
+    // モーダルウィンドウ
     #helpModal.modal.fade tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true"
       .modal-dialog role="document"
         .modal-content
@@ -31,27 +32,101 @@
                   li.nav-item
                     a.nav-link.active href="#tab1" data-toggle="tab"
                       | レイアウト
+                      i.fas.fa-list-ol
                   li.nav-item
                     a.nav-link href="#tab2" data-toggle="tab"
                       | 装飾
+                      i.fas.fa-bold
                   li.nav-item
                     a.nav-link href="#tab3" data-toggle="tab"
                       | 挿入
+                      i.fas.fa-link
                   li.nav-item
                     a.nav-link href="#tab4" data-toggle="tab"
                       | テーブル
+                      i.fas.fa-table
               .tab-content
                 #tab1.tab-pane.active
-                  | test1
+                  table.table.table-striped
+                    tbody
+                      tr
+                        td
+                          h1
+                            | 見出し h1
+                          h2
+                            | 見出し h2
+                          h3
+                            | 見出し h3
+                          h4
+                            | 見出し h4
+                          h5
+                            | 見出し h5
+                          h6
+                            | 見出し h6
+                        td
+                          .mark-down-content
+                            textarea readonly="readonly"
+                                | # 見出し h1
+                                | ## 見出し h2
+                                | ### 見出し h3
+                                | #### 見出し h4
+                                | ##### 見出し h5
+                                | ###### 見出し h6
+                      tr
+                        td
+                          ul
+                            li
+                              | リスト
+                              | リスト
+                            ul
+                              li
+                                | リスト
+                        td
+                          .mark-down-content
+                            textarea readonly="readonly"
+                              | - リスト
+                              | - リスト
+                              |     - リスト
+                            .mark-down-info
+                              | タブで階層を下げることができます
+                      tr
+                        td
+                          ol
+                            li
+                              | 番号付きリスト
+                            li
+                              | 番号付きリスト
+                            ol
+                              li
+                                | 番号付きリスト
+                        td
+                          .mark-down-content
+                            textarea readonly="readonly"
+                              | 1. 番号付きリスト
+                              | 2. 番号付きリスト
+                              |     1. 番号付きリスト
+                            .mark-down-info
+                              | タブで階層を下げることができます
+                      tr
+                        td
+                          ul
+                            li.check-list-item
+                              input.task-list-item-checkbox type="checkbox" disabled="disabled" value="on"
+                                | チェックボックス
+                            li.check-list-item
+                              input.task-list-item-checkbox type="checkbox" disabled="disabled" value="on" checked="checked"
+                                | チェックボックス
+                        td
+                          div.markdown-content
+                            textarea readonly="readonly"
+                              | - [ ] チェックボックス
+                              | - [x] チェックボックス
                 #tab2.tab-pane
                   | test2
                 #tab3.tab-pane
                   | test3
                 #tab4.tab-pane
                   | test4
-            .modal-footer
-                button.btn.btn-secondary type="button" data-dismiss="modal" 閉じる
-                button.btn.btn-primary type="button" 保存する
     javascript:
       window.onload = function() {
         new Vue({
