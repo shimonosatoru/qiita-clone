@@ -20,10 +20,35 @@
       .modal-dialog role="document"
         .modal-content
             .modal-header
-                h5#exampleModalLabel.modal-title　タイトル
+                h5#exampleModalLabel.modal-title
+                | Markdownの書き方
                 button.close type="button" data-dismiss="modal" aria-label="Close"
-                    span aria-hidden="true" ×
-            .modal-body これは 標準のモーダルダイアログです。
+                    span aria-hidden="true"
+                      | ×
+            .modal-body
+              nav
+                ul.nav.nav-tabs
+                  li.nav-item
+                    a.nav-link.active href="#tab1" data-toggle="tab"
+                      | レイアウト
+                  li.nav-item
+                    a.nav-link href="#tab2" data-toggle="tab"
+                      | 装飾
+                  li.nav-item
+                    a.nav-link href="#tab3" data-toggle="tab"
+                      | 挿入
+                  li.nav-item
+                    a.nav-link href="#tab4" data-toggle="tab"
+                      | テーブル
+              .tab-content
+                #tab1.tab-pane.active
+                  | test1
+                #tab2.tab-pane
+                  | test2
+                #tab3.tab-pane
+                  | test3
+                #tab4.tab-pane
+                  | test4
             .modal-footer
                 button.btn.btn-secondary type="button" data-dismiss="modal" 閉じる
                 button.btn.btn-primary type="button" 保存する
