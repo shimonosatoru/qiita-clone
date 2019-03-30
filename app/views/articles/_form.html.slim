@@ -7,7 +7,7 @@
     #editor
       .article-wrapper
         .article_header.bg-light
-          i.fas.fa-question
+          i.fas.fa-question data-toggle="modal" data-target="#helpModal"
         = f.input :body, required: true, label: false, input_html: { class: 'form-control', debounce: 50, 'v-model':'input', rows: 20 }
       div.markdown-preview v-html=("input | marked")
     .article-footer
@@ -16,6 +16,17 @@
       .article-submit
         = f.button :submit, class: 'btn btn-primary'
 
+    #helpModal.modal.fade tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true"
+      .modal-dialog role="document"
+        .modal-content
+            .modal-header
+                h5#exampleModalLabel.modal-title　タイトル
+                button.close type="button" data-dismiss="modal" aria-label="Close"
+                    span aria-hidden="true" ×
+            .modal-body これは 標準のモーダルダイアログです。
+            .modal-footer
+                button.btn.btn-secondary type="button" data-dismiss="modal" 閉じる
+                button.btn.btn-primary type="button" 保存する
     javascript:
       window.onload = function() {
         new Vue({
