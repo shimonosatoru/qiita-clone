@@ -128,28 +128,28 @@
                         b
                           | 強調（太字）
                       td
-                        textarea# name="" cols="30" rows="10" readonly="readonly"
+                        textarea readonly="readonly"
                           | **text**
                     tr
                       td
                         i
                           | 強調（斜体）
                       td
-                        textarea# name="" cols="30" rows="10" readonly="readonly"
+                        textarea readonly="readonly"
                           | *text*
                     tr
                       td
                         s
                           | 打ち消し線
                       td
-                        textarea# name="" cols="30" rows="10" readonly="readonly"
+                        textarea readonly="readonly"
                           | ~~text~~
                     tr
                       td
                         b
                           | 強調（太字）
                       td
-                        textarea# name="" cols="30" rows="10" readonly="readonly"
+                        textarea readonly="readonly"
                           | **text**
                     tr
                       td
@@ -158,42 +158,54 @@
                           blockquote
                             | 引用
                       td
-                        textarea# name="" cols="30" rows="10" readonly="readonly"
+                        textarea readonly="readonly"
                           | >text
                           | >>text
                 #tab3.tab-pane
                   table.table.table-striped
                     tr
                       td
-                        b
-                          | 強調（太字）
+                        a href="#"
+                          | リンク
                       td
-                        textarea# name="" cols="30" rows="10" readonly="readonly"
-                          | **text**
+                        textarea readonly="readonly"
+                          | [title](http://...)
                     tr
                       td
-                        i
-                          | 強調（斜体）
+                        | 画像埋め込み
                       td
-                        textarea# name="" cols="30" rows="10" readonly="readonly"
-                          | *text*
+                        textarea readonly="readonly"
+                          | ![alt](http://...)
                     tr
                       td
-                        s
-                          | 打ち消し線
+                        | 水平線
                       td
-                        textarea# name="" cols="30" rows="10" readonly="readonly"
-                          | ~~text~~
+                        textarea readonly="readonly"
+                          | ---
+                    tr.highlight
+                      td style="padding: 0px 8px;"
+                        .markdown-content
+                          .code-frame data-lang="ruby" style="width: 220px; border: 1px solid rgb(234, 234, 234);"
+                            .code-lang
+                              span.bold
+                                | qiita.rb
+                                pre
+                                  span.nb
+                                    | puts
+                                    span.s1
+                                      | 'code with syntax'
+                      td
+                        .markdown-content
+                          textarea.syntax_code readonly="readonly"
+                            | ```ruby:qiita.rbp
+                            | puts 'code with syntax'
+                            | ```
                     tr
                       td
-                        blockquote
-                          | 引用
-                          blockquote
-                            | 引用
+                        | Markdownのエスケープ
                       td
-                        textarea# name="" cols="30" rows="10" readonly="readonly"
-                          | >text
-                          | >>text
+                        textarea readonly="readonly"
+                          | \
                 #tab4.tab-pane
                   | test4
     javascript:
