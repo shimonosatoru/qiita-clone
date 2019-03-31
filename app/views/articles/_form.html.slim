@@ -207,7 +207,68 @@
                         textarea readonly="readonly"
                           | \
                 #tab4.tab-pane
-                  | test4
+                  .markdownContent
+                    textarea.tablesample_code readonly="readonly"
+                      | | Left align       |       Right align |    Center align    |
+                        |:-----------------|------------------:|:------------------:|
+                        | This             |              This |        This        |
+                        | column           |            column |       column       |
+                        | will             |              will |        will        |
+                        | be               |                be |         be         |
+                        | left             |             right |       center       |
+                        | aligned          |           aligned |      aligned       |
+                    table.table.table-bordered.table-striped
+                      thead
+                        tr
+                          th.text-left
+                            | Left align
+                          th.text-right
+                            | Right align
+                          th.text-center
+                            | Center align
+                      tbody
+                        tr
+                          td.text-left
+                            | This
+                          td.text-right
+                            | This
+                          td.text-center
+                            | This
+                        tr
+                          td.text-left
+                            | column
+                          td.text-right
+                            | column
+                          td.text-center
+                            | column
+                        tr
+                          td.text-left
+                            | will
+                          td.text-right
+                            | will
+                          td.text-center
+                            | will
+                        tr
+                          td.text-left
+                            | be
+                          td.text-right
+                            | be
+                          td.text-center
+                            | be
+                        tr
+                          td.text-left
+                            | left
+                          td.text-right
+                            | left
+                          td.text-center
+                            | left
+                        tr
+                          td.text-left
+                            | aligned
+                          td.text-right
+                            | aligned
+                          td.text-center
+                            | aligned
     javascript:
       window.onload = function() {
         new Vue({
