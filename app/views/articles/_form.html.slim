@@ -21,8 +21,8 @@
       .modal-dialog role="document"
         .modal-content
             .modal-header
-                h5#exampleModalLabel.modal-title
-                | Markdownの書き方
+                h4.modal-title
+                  | Markdownの書き方
                 button.close type="button" data-dismiss="modal" aria-label="Close"
                     span aria-hidden="true"
                       | ×
@@ -47,11 +47,11 @@
                       i.fas.fa-table
               .tab-content
                 #tab1.tab-pane.active
-                  table.table.table-striped
+                  table
                     tbody
                       tr
                         td
-                          h1
+                          h1.display-6
                             | 見出し h1
                           h2
                             | 見出し h2
@@ -65,28 +65,29 @@
                             | 見出し h6
                         td
                           .mark-down-content
-                            textarea readonly="readonly"
-                                | # 見出し h1
-                                | ## 見出し h2
-                                | ### 見出し h3
-                                | #### 見出し h4
-                                | ##### 見出し h5
-                                | ###### 見出し h6
+                            textarea.heading_code readonly="readonly"
+                                | # 見出し h1&#13;
+                                | ## 見出し h2&#13;
+                                | ### 見出し h3&#13;
+                                | #### 見出し h4&#13;
+                                | ##### 見出し h5&#13;
+                                | ###### 見出し h6&#13;
                       tr
                         td
                           ul
                             li
                               | リスト
+                            li
                               | リスト
                             ul
                               li
                                 | リスト
                         td
                           .mark-down-content
-                            textarea readonly="readonly"
-                              | - リスト
-                              | - リスト
-                              |     - リスト
+                            textarea.list_code readonly="readonly"
+                              | - リスト&#13;
+                              | - リスト&#13;
+                              |     - リスト&#13;
                             .mark-down-info
                               | タブで階層を下げることができます
                       tr
@@ -101,28 +102,28 @@
                                 | 番号付きリスト
                         td
                           .mark-down-content
-                            textarea readonly="readonly"
-                              | 1. 番号付きリスト
-                              | 2. 番号付きリスト
-                              |     1. 番号付きリスト
+                            textarea.list_code readonly="readonly"
+                              | 1. 番号付きリスト&#13;
+                              | 2. 番号付きリスト&#13;
+                              |     1. 番号付きリスト&#13;
                             .mark-down-info
                               | タブで階層を下げることができます
                       tr
                         td
                           ul
                             li.check-list-item
-                              input.task-list-item-checkbox type="checkbox" disabled="disabled" value="on"
+                              input.checkbox type="checkbox" disabled="disabled" value="on"
                                 | チェックボックス
                             li.check-list-item
-                              input.task-list-item-checkbox type="checkbox" disabled="disabled" value="on" checked="checked"
+                              input.checkbox type="checkbox" disabled="disabled" value="on" checked="checked"
                                 | チェックボックス
                         td
                           div.markdown-content
-                            textarea readonly="readonly"
-                              | - [ ] チェックボックス
+                            textarea.checked_code readonly="readonly"
+                              | - [ ] チェックボックス&#13;
                               | - [x] チェックボックス
                 #tab2.tab-pane
-                  table.table.table-striped
+                  table
                     tr
                       td
                         b
@@ -158,8 +159,8 @@
                           blockquote
                             | 引用
                       td
-                        textarea readonly="readonly"
-                          | >text
+                        textarea.blockquotes_code readonly="readonly"
+                          | >text&#13;
                           | >>text
                 #tab3.tab-pane
                   table.table.table-striped
