@@ -1,0 +1,247 @@
+    #helpModal.modal.fade tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true"
+      .modal-dialog role="document"
+        .modal-content
+            .modal-header
+                h4.modal-title
+                  | Markdownの書き方
+                button.close type="button" data-dismiss="modal" aria-label="Close"
+                    span aria-hidden="true"
+                      | ×
+            .modal-body
+              nav
+                ul.nav.nav-tabs
+                  li.nav-item
+                    a.nav-link.active href="#tab1" data-toggle="tab"
+                      | レイアウト
+                      i.fa.fa-list-ol
+                  li.nav-item
+                    a.nav-link href="#tab2" data-toggle="tab"
+                      | 装飾
+                      i.fa.fa-bold
+                  li.nav-item
+                    a.nav-link href="#tab3" data-toggle="tab"
+                      | 挿入
+                      i.fa.fa-link
+                  li.nav-item
+                    a.nav-link href="#tab4" data-toggle="tab"
+                      | テーブル
+                      i.fa.fa-table
+              .tab-content
+                #tab1.tab-pane.active
+                  table
+                    tbody
+                      tr
+                        td
+                          h1.display-6 見出し h1
+                          h2 見出し h2
+                          h3 見出し h3
+                          h4 見出し h4
+                          h5 見出し h5
+                          h6 見出し h6
+                        td
+                          .mark-down-content
+                            textarea.heading_code readonly="readonly"
+                                | # 見出し h1&#13;
+                                | ## 見出し h2&#13;
+                                | ### 見出し h3&#13;
+                                | #### 見出し h4&#13;
+                                | ##### 見出し h5&#13;
+                                | ###### 見出し h6&#13;
+                      tr
+                        td
+                          ul
+                            li
+                              | リスト
+                            li
+                              | リスト
+                            ul
+                              li
+                                | リスト
+                        td
+                          .mark-down-content
+                            textarea.list_code readonly="readonly"
+                              | - リスト&#13;
+                              | - リスト&#13;
+                              |     - リスト&#13;
+                            .mark-down-info
+                              | タブで階層を下げることができます
+                      tr
+                        td
+                          ol
+                            li
+                              | 番号付きリスト
+                            li
+                              | 番号付きリスト
+                            ol
+                              li
+                                | 番号付きリスト
+                        td
+                          .mark-down-content
+                            textarea.list_code readonly="readonly"
+                              | 1. 番号付きリスト&#13;
+                              | 2. 番号付きリスト&#13;
+                              |     1. 番号付きリスト&#13;
+                            .mark-down-info
+                              | タブで階層を下げることができます
+                      tr
+                        td
+                          ul
+                            li.check-list-item
+                              input.checkbox type="checkbox" disabled="disabled" value="on"
+                                | チェックボックス
+                            li.check-list-item
+                              input.checkbox type="checkbox" disabled="disabled" value="on" checked="checked"
+                                | チェックボックス
+                        td
+                          div.markdown-content
+                            textarea.checked_code readonly="readonly"
+                              | - [ ] チェックボックス&#13;
+                              | - [x] チェックボックス
+                #tab2.tab-pane
+                  table
+                    tr
+                      td
+                        b
+                          | 強調（太字）
+                      td
+                        textarea readonly="readonly"
+                          | **text**
+                    tr
+                      td
+                        i
+                          | 強調（斜体）
+                      td
+                        textarea readonly="readonly"
+                          | *text*
+                    tr
+                      td
+                        s
+                          | 打ち消し線
+                      td
+                        textarea readonly="readonly"
+                          | ~~text~~
+                    tr
+                      td
+                        b
+                          | 強調（太字）
+                      td
+                        textarea readonly="readonly"
+                          | **text**
+                    tr
+                      td
+                        blockquote
+                          | 引用
+                          blockquote
+                            | 引用
+                      td
+                        textarea.blockquotes_code readonly="readonly"
+                          | >text&#13;
+                          | >>text
+                #tab3.tab-pane
+                  table.table.table-striped
+                    tr
+                      td
+                        a href="#"
+                          | リンク
+                      td
+                        textarea readonly="readonly"
+                          | [title](http://...)
+                    tr
+                      td
+                        | 画像埋め込み
+                      td
+                        textarea readonly="readonly"
+                          | ![alt](http://...)
+                    tr
+                      td
+                        | 水平線
+                      td
+                        textarea readonly="readonly"
+                          | ---
+                    tr.highlight
+                      td style="padding: 0px 8px;"
+                        .markdown-content
+                          .code-frame data-lang="ruby" style="width: 220px; border: 1px solid rgb(234, 234, 234);"
+                            .code-lang
+                              span.bold
+                                | qiita.rb
+                            pre
+                              span.nb
+                                | puts
+                              span.s1
+                                | 'code with syntax'
+                      td
+                        .markdown-content
+                          textarea.syntax_code readonly="readonly"
+                            | ```ruby:qiita.rb&#13;
+                            | puts 'code with syntax'&#13;
+                            | ```
+                    tr
+                      td
+                        | Markdownのエスケープ
+                      td
+                        textarea readonly="readonly"
+                          | \
+                #tab4.tab-pane
+                  .markdownContent
+                    textarea.tablesample_code readonly="readonly"
+                      | | Left align       |       Right align |    Center align    |&#13;
+                      | |:-----------------|------------------:|:------------------:|&#13;
+                      | | This             |              This |        This        |&#13;
+                      | | column           |            column |       column       |&#13;
+                      | | will             |              will |        will        |&#13;
+                      | | be               |                be |         be         |&#13;
+                      | | left             |             right |       center       |&#13;
+                      | | aligned          |           aligned |      aligned       |&#13;
+                    table.table.table-bordered.table-striped
+                      thead
+                        tr
+                          th.text-left
+                            | Left align
+                          th.text-right
+                            | Right align
+                          th.text-center
+                            | Center align
+                      tbody
+                        tr
+                          td.text-left
+                            | This
+                          td.text-right
+                            | This
+                          td.text-center
+                            | This
+                        tr
+                          td.text-left
+                            | column
+                          td.text-right
+                            | column
+                          td.text-center
+                            | column
+                        tr
+                          td.text-left
+                            | will
+                          td.text-right
+                            | will
+                          td.text-center
+                            | will
+                        tr
+                          td.text-left
+                            | be
+                          td.text-right
+                            | be
+                          td.text-center
+                            | be
+                        tr
+                          td.text-left
+                            | left
+                          td.text-right
+                            | left
+                          td.text-center
+                            | left
+                        tr
+                          td.text-left
+                            | aligned
+                          td.text-right
+                            | aligned
+                          td.text-center
+                            | aligned

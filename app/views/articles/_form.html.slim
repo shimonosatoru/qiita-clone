@@ -5,13 +5,18 @@
     .article-title
       = f.input :title, required: true, label: false, input_html: { class: 'form-control' }
     #editor
-      = f.input :body, required: true, label: false, input_html: { class: 'form-control', debounce: 50, 'v-model':'input', rows: 20 }
+      .article-wrapper
+        .article_header.bg-light
+          i.fa.fa-question-circle aria-hidden="true"data-toggle="modal" data-target="#helpModal"
+        = f.input :body, required: true, label: false, input_html: { class: 'form-control', debounce: 50, 'v-model':'input', rows: 20 }
       div.markdown-preview v-html=("input | marked")
     .article-footer
       .article-public
         = f.input :public, label: '公開'
       .article-submit
         = f.button :submit, class: 'btn btn-primary'
+
+    == render 'modal'
 
     javascript:
       window.onload = function() {
