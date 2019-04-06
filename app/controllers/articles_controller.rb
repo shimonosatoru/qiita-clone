@@ -61,6 +61,7 @@ class ArticlesController < ApplicationController
   def searched_articles
     articles = Article.order('created_at desc, id desc').all
     articles = articles.where('title like ?', "%#{search_query}%") if search_query
+    articles = articles.page(params[:page]).per(10)
     articles
   end
 
