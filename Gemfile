@@ -20,7 +20,6 @@ gem 'bootstrap'
 gem 'font-awesome-rails'
 gem 'redcarpet'
 gem 'rouge'
-gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platforms: :mri
